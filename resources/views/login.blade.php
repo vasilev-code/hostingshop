@@ -23,7 +23,7 @@
                             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">     
                                 <ul class="navbar-nav mr-4">
                                     <li class="nav-item">
-                                        <a class="nav-link" data-value="about" href="{{route('login')}}">Войти</a>
+                                        <a class="nav-link" data-value="about" href="">Войти</a>
                                         <a class="nav-link" data-value="about" href="">Сообщения</a>
                                         <a class="nav-link" data-value="about" href="#">МЕНЮ</a>
                                         <a class="nav-link" data-value="about" href="#">Корзина</a>
@@ -32,51 +32,20 @@
                             </div>
                         </nav>
                     </header><!-- Header end -->
-                    <section><!-- Section begin -->
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="main-text">Мы предлагаем качественный и безопасный хостинг для ваших сайтов, исходя из ваших потребностей.</div>
-                                </div>
-                            </div>
-                    </section><!-- End section -->
+                   
                         <main><!-- Main begin -->
-                            <div class="container rate">
-                                <div class="row">
-                                    <div class="card1">
-                                        <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Месяц</h4>
-                                            <p class="card-text">
-                                            Some quick example text to build on the card title
-                                            and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#!" class="btn btn-primary">Оформить</a>
-                                        </div>
-                                    </div>
-                                    <div class="card2">
-                                        <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Полгода</h4>
-                                            <p class="card-text">
-                                            Some quick example text to build on the card title
-                                            and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#!" class="btn btn-primary">Оформить</a>
-                                        </div>
-                                    </div>
-                                    <div class="card3">
-                                        <img class="card-img-top" src="/images/pathToYourImage.png" alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Один год</h4>
-                                            <p class="card-text">
-                                            Some quick example text to build on the card title
-                                            and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#!" class="btn btn-primary">Оформить</a>
-                                        </div>
-                                    </div>
-                                </div>
+                        <form action="{{ route('checklogin') }}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="logincheck">Логин</label>
+                                <input type="text" name="logincheck" placeholder="Логин" id="logincheck" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label for="passwordcheck">Пароль</label>
+                                <input type="text" name="passwordcheck" placeholder="Логин" id="passwordcheck" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-success">Отправить</button>
+                        </form>
                         </main><!-- Main end -->
                         <footer class="d-flex text-center justify-content-end"><!-- Footer begin-->
                             <div class="card4">

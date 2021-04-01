@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +25,13 @@ Route::get('/registration', function () {
     return view('registration');
 })->name('registration');
 Route::post('/registration/submit', [RegistrationController::class, 'submit'])->name('registration-form');
+Route::post('/checklogin', [RegistrationController::class, 'index'])->name('checklogin');
+Route::view("profile", 'profile');
+Route::get('/login', function(){
+    if(session()->has('logincheck'))
+    {
+        return redirect('profile');
+    }
+    return redirect('login');
+})->name('login');
 
